@@ -35,7 +35,8 @@ def fullboard():
     "pieceName": "",
     "pieceColour": "",
     "moved": False,
-    "isCaptured": False,
+    "isCaptured": False,    
+    "moves": [],
     "attacking": []
     }
 
@@ -44,7 +45,8 @@ def fullboard():
     "coordinates": (0, 0),
     "pieceName": "",
     "pieceColour": "",
-    "isCaptured": False,
+    "isCaptured": False,   
+    "moves": [],
     "attacking": []
     }
 
@@ -54,6 +56,7 @@ def fullboard():
     "pieceName": "",
     "pieceColour": "",
     "isCaptured": False,
+    "moves": [],
     "attacking": []
     }
 
@@ -62,7 +65,8 @@ def fullboard():
     "coordinates": (0, 0),
     "pieceName": "",
     "pieceColour": "",
-    "isCaptured": False,
+    "isCaptured": False,    
+    "moves": [],
     "attacking": []
     }
 
@@ -72,6 +76,7 @@ def fullboard():
     "pieceName": "",
     "pieceColour": "",
     "isCaptured": False,
+    "moves": [],
     "attacking": []
     }
 
@@ -82,6 +87,7 @@ def fullboard():
     "pieceColour": "",
     "isCaptured": False,
     "attacking": [],
+    "moves": [],
     "check": False
     }
 
@@ -256,7 +262,7 @@ def printfullboard():
 
 def printannotatedboard():
     letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
-    rownum = 1
+    rownum = 8
     for row in completeboard:
         print(rownum, end =" ")
         for square in row:
@@ -270,12 +276,15 @@ def printannotatedboard():
                     print(uppercase, end =" ")
                 else:
                     print(piecetype, end =" ")
-        rownum += 1
+        rownum -= 1
         print("")
-    #Prints file letter
+        
     print(" ", end =" ")
+    #Prints file letter
     for i in range(BOARDSIZE):            
         print(f"{letters[i]} ", end =" ")
+    print("")
+    
 
 #Creates board with all pieces
 fullboard()
