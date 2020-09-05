@@ -1,1 +1,1 @@
-# Chess
+# Nice python terminal game of chess
